@@ -135,6 +135,10 @@ ul {
     width: 95%;
 }
 
+.quick-stats-list {
+    font-size: small;
+}
+
 .rankings-box-name {
     align-self: center;
     flex: 2.5;

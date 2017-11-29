@@ -52,12 +52,15 @@ function calculateSeasonWinTotal (weeklyWinsForSeason) {
   let seasonTotal2 = [];
   let seasonTotal3 = [];
 
+// extract necessary weeks in different arrays for previous ranking, last 3 weeks, etc.
   var l3WeeklyWinsForSeason2 = [...weeklyWinsForSeason];
   var lastWeeklyWinsForSeason2 = [...weeklyWinsForSeason];
   var lastl3WeeklyWinsForSeason2 = [...weeklyWinsForSeason];
   var l3WeeklyWins = l3WeeklyWinsForSeason2.splice(-3, 3);
   var lastl3WeeklyWins = lastl3WeeklyWinsForSeason2.splice(-4, 3);
   lastWeeklyWinsForSeason2.pop();
+
+// get total wins & losses for previous ranking
   lastWeeklyWinsForSeason2.forEach(weekWins => {
       weekWins.forEach(team => {
           if(seasonTotal3.find(seasonTotal3Team => seasonTotal3Team.id === team.id)) {
@@ -70,6 +73,7 @@ function calculateSeasonWinTotal (weeklyWinsForSeason) {
       })
   });
 
+// get total wins & losses for current ranking
   weeklyWinsForSeason.forEach(weekWins => {
       weekWins.forEach(team => {
           if(seasonTotal2.find(seasonTotal2Team => seasonTotal2Team.id === team.id)) {
@@ -82,6 +86,7 @@ function calculateSeasonWinTotal (weeklyWinsForSeason) {
       })
   });
 
+// get last 3 wins & losses for current ranking
   for (var i = 0; i < seasonTotal2.length; i++) {
     seasonTotal2[i].last3Wins = 0;
     seasonTotal2[i].last3Losses = 0;
@@ -98,6 +103,7 @@ function calculateSeasonWinTotal (weeklyWinsForSeason) {
       })
   });
 
+// get last 3 wins & losses for previous ranking
   for (var i = 0; i < seasonTotal2.length; i++) {
     seasonTotal2[i].lastLast3Wins = 0;
     seasonTotal2[i].lastLast3Losses = 0;
@@ -115,6 +121,7 @@ function calculateSeasonWinTotal (weeklyWinsForSeason) {
       })
   });
 
+// get scores for last 3 weeks for current ranking
   l3WeeklyWins.forEach(weekWins => {
       weekWins.forEach(team => {
           if(seasonTotal2.find(seasonTotal2Team => seasonTotal2Team.id === team.id)) {
@@ -126,36 +133,47 @@ function calculateSeasonWinTotal (weeklyWinsForSeason) {
       })
   });
 
+// calculate average PFPG over last 3 weeks for previous ranking
   for (var i = 0; i < seasonTotal2.length; i++) {
     seasonTotal2[i].lastl3Pfpg = (seasonTotal2[i].lastl3score/3).toFixed(1);
   }
+
+// calculate raw score for previous ranking
   var lastWeeks = weeklyWinsForSeason.length - 1;
   for (var i = 0; i < seasonTotal2.length; i++) {
     seasonTotal2[i].lastRawScore = ((seasonTotal2[i].lastWins * 1.1) + (seasonTotal2[i].lastLast3Wins / 3 * lastWeeks) + (seasonTotal2[i].lastl3Pfpg * 1.1)).toFixed(1);
   }
+
+// calculate average PFPG over last 3 weeks for current ranking
   for (var i = 0; i < seasonTotal2.length; i++) {
     seasonTotal2[i].l3Pfpg = (seasonTotal2[i].l3score/3).toFixed(1);
   }
+
+// calculate raw score for current ranking
   var weeks = weeklyWinsForSeason.length;
   for (var i = 0; i < seasonTotal2.length; i++) {
     seasonTotal2[i].rawScore = ((seasonTotal2[i].wins * 1.1) + (seasonTotal2[i].last3Wins / 3 * weeks) + (seasonTotal2[i].l3Pfpg * 1.1)).toFixed(1);
   }
 
   seasonTotal2.sort((a, b) => { 
-      return b.lastRawScore - a.lastRawScore;
+    return b.lastRawScore - a.lastRawScore;
   });
+  
+// set ranking for previous week
   var lastRank = 0;
-    for (var i = 0; i < seasonTotal2.length; i++) {
-      lastRank++;
-      seasonTotal2[i].lastRank = lastRank;
-    }
+  for (var i = 0; i < seasonTotal2.length; i++) {
+    lastRank++;
+    seasonTotal2[i].lastRank = lastRank;
+  }
   seasonTotal2.sort((a, b) => { 
-      return b.rawScore - a.rawScore;
+    return b.rawScore - a.rawScore;
   });
+
+// calculate RPI for current ranking
   for (var i = 0; i < seasonTotal2.length; i++) {
     seasonTotal2[i].rpi = seasonTotal2[i].rawScore / seasonTotal2[0].rawScore;
   }
-  console.log(seasonTotal2);
+
   return seasonTotal2;
 }
 

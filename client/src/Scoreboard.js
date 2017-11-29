@@ -77,7 +77,7 @@ class TeamLineup extends React.Component {
     return (
       <div className='matchup-details-stats'>
         {this.state.players &&
-          <ul>
+          <ul className='quick-stats-list'>
             <li>Line:</li>
             <li>Top Scorer: {this.state.players[0].playerName} - {this.state.players[0].realPoints} </li>
             <li>Best Lineup Total: </li>
