@@ -7,7 +7,7 @@
   "private": false,
   "scripts": {
     "start": "node server.js",
-    "heroku-postbuild": "cd client && yarn run build"
+    "heroku-postbuild": "cd client && yarn install && yarn run build"
   },
   "dependencies": {
     "axios": "^0.17.1",
