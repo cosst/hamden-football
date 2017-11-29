@@ -1,0 +1,235 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.green-text {
+    color: green;
+}
+
+.matchup-container {
+    background: #FCFCFC;
+    border: 1px solid black;
+    padding: 5px 15px;
+    margin: 5px 0px 0px 0px;
+    text-align: center;
+}
+
+.matchup-details {
+    display: flex;
+    flex-grow: 1;
+}
+
+.matchup-details-container {
+    background: #FCFCFC;
+    border: 1px solid black;
+    border-top: 0;
+    display: flex;
+    padding: 5px 15px;
+    margin: 0px;
+    text-align: center;
+}
+
+.matchup-details-team {
+    flex-grow: 1;
+    font-weight: bold;
+    text-align: center;
+}
+
+.matchup-details-stats {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.matchup-team {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.matchup-team-box {
+    flex: 1;
+    padding: 5px 0px;
+}
+
+.matchup-team-box-name {
+    text-align: left;
+    flex: 2.5;
+    padding: 5px 0px;
+}
+
+.matchups-table {
+    margin: 0 auto;
+    width: 95%;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: small;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.nav li {
+    margin: 0px 15px 5px 0px;
+}
+
+.player-box-name {
+    text-align: left;
+    flex: 1.5;
+    padding: 5px 0px 5px 5px;
+}
+
+.player-box-position {
+    flex: 1;
+    padding: 5px 0px 5px 5px;
+}
+
+.player-container {
+    background: #f8f8f2;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+}
+
+.player-container:nth-child(odd){
+    background: #FCFCFC;
+}
+
+.player-list-header {
+    background-color: lightgrey;
+    flex: 1;
+    font-weight: bold;
+    padding: 5px 0px 5px 5px;
+}
+
+.player-list-header-name {
+    background-color: lightgrey;
+    flex: 1.5;
+    font-weight: bold;
+    text-align: left;
+    padding: 5px 0px 5px 5px;
+}
+
+.player-table {
+    font-size: 12px;
+    text-align: left;
+    width: 95%;
+}
+
+.rankings-box-name {
+    align-self: center;
+    flex: 2.5;
+    padding: 10px 0px 10px 5px;
+    text-align: left;
+}
+
+.rankings-container {
+    background: #f8f8f2;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+}
+
+.rankings-container:nth-child(odd){
+    background: #FCFCFC;
+}
+
+.rankings-header-name {
+    background-color: lightgrey;
+    flex: 2.5;
+    font-weight: bold;
+    text-align: left;
+    padding: 5px 0px 5px 5px;
+}
+
+.rankings-list-header {
+    background-color: lightgrey;
+    flex: 1;
+    font-weight: bold;
+    padding: 5px 0px 5px 1px;
+}
+
+.red-text {
+    color: red;
+}
+
+.standings-box {
+    align-self: center;
+    flex: 1;
+    padding: 10px 0px;
+}
+
+.standings-box-name {
+    align-self: center;
+    flex: 2.5;
+    padding: 10px 0px;
+    text-align: left;
+}
+
+.standings-box-rank {
+    align-self: center;
+    flex: 0.5;
+    padding: 10px 0px;
+}
+
+.standings-container {
+    background: #f8f8f2;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.standings-header-name {
+    background-color: lightgrey;
+    flex: 2.5;
+    font-weight: bold;
+    text-align: left;
+    padding: 5px 0px;
+}
+
+.standings-header-rank {
+    background-color: lightgrey;
+    flex: 0.5;
+    font-weight: bold;
+    padding: 5px 0px;
+}
+
+.standings-table {
+    font-size: 12px;
+    margin: 0 auto;
+    text-align: center;
+    width: 95%;
+}
+
+.week-nav {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: x-small;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.week-nav li {
+    margin: 0px 15px 5px 0px;
+}

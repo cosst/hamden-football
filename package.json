@@ -1,0 +1,15 @@
+{
+  "name": "hamden-football",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "<nathaniel.schier@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "axios": "^0.17.1",
+    "espn-ff-api": "^1.0.6",
+    "express": "^4.16.2",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {}
+}
