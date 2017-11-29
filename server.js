@@ -4,6 +4,9 @@ const espnFF = require('./espn-ff-api');
 
 var espn = require('./espn');
 
+// serve the React app build files in production
+app.use(express.static(`${__dirname}/client/build`));
+
 // ESPN calls
 app.get('/api/standings', espn.getStandings);
 app.post('/api/rankings', espn.getPowerRankings);
