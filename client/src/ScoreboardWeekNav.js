@@ -113,6 +113,15 @@ class ScoreboardWeekNav extends React.Component {
             Week 12
           </Link>
         </li>
+        <li>
+          <Link
+            to={{
+              pathname: '/scoreboard',
+              search: '?scoringPeriodId=13'
+            }}>
+            Week 13
+          </Link>
+        </li>
       </ul>
     )
   }

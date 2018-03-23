@@ -7,7 +7,6 @@ async function getPowerRankings (leagueId, seasonId, scoringPeriodId) {
   let weeklyWins = await this.getWeeklyWinsForSeason(leagueId, seasonId, scoringPeriodId)
   let l3Games = await this.getWeeklyWinsForSeason2(leagueId, seasonId, scoringPeriodId)
   let rankings = this.calculateSeasonWinTotal(cloneDeep(weeklyWins));
-  console.log(rankings);
   rankings = rankings.map(team => ({
       ...userData.find(user => user.id === team.id),
       ...team,
@@ -194,7 +193,8 @@ function calculateWeeklyWinsForSeason (weeklyScoreDataForSeason) {
                   score: teamScoreData.score,
                   l3score: 0,
                   lastl3score: 0,
-                  winner: teamScoreData.winner
+                  winner: teamScoreData.winner,
+                  teamScoreData: teamScoreData.abbrev
               })))
 }
 
@@ -217,7 +217,7 @@ async function getWeeklyScoreDataForSeason (leagueId, seasonId, scoringPeriodId)
           return a.score - b.score;
       });
       seasonData.push(weekScores);
-  }
+  }  
   return seasonData;
 }
 
@@ -278,9 +278,11 @@ async function getWeekScores (leagueId, seasonId, week) {
           id: team.teamId, 
           score: team.score,
           name: `${team.team.teamLocation} ${team.team.teamNickname}`,
-          winner: team.winner
+          winner: team.winner,
+          abbrev: team.abbrev
       }))
       .filter(team => team.score !== 0);
+      console.log(team);
 }
 
 module.exports = {

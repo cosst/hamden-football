@@ -9,12 +9,12 @@ function Nav () {
         </a>
       </li>
       <li>
-        <a href='/rankings?scoringPeriodId=12'>
+        <a href='/rankings?scoringPeriodId=13'>
           Rankings
         </a>
       </li>
       <li>
-        <a href='/scoreboard?scoringPeriodId=12'>
+        <a href='/scoreboard?scoringPeriodId=13'>
           Scoreboard
         </a>
       </li>
