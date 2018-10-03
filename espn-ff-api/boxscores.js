@@ -96,7 +96,7 @@ const lineupPositions = {
 };
 
 function getBoxScore(cookies, leagueId, teamId, scoringPeriodId){
-  let url = 'http://games.espn.com/ffl/api/v2/boxscore?leagueId=' + leagueId + '&teamId=' + teamId + '&scoringPeriodId=' + scoringPeriodId + '&seasonId=2017';
+  let url = 'http://games.espn.com/ffl/api/v2/boxscore?leagueId=' + leagueId + '&teamId=' + teamId + '&scoringPeriodId=' + scoringPeriodId + '&seasonId=2018';
   return espnRequest.requestToPromise(url, cookies);
 }
 

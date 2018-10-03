@@ -1,7 +1,7 @@
 const espnRequest = require('./espn-request');
 
 function getLeagueStandings(cookies, leagueId){
-  let url = 'http://games.espn.com/ffl/api/v2/standings?leagueId=' + leagueId + '&seasonId=2017';
+  let url = 'http://games.espn.com/ffl/api/v2/standings?leagueId=' + leagueId + '&seasonId=2018';
   return espnRequest.requestToPromise(url, cookies);
 }
 

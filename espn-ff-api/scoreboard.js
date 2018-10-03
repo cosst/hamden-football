@@ -1,7 +1,7 @@
 const espnRequest = require('./espn-request');
 
 function getLeagueScoreboard(cookies, leagueId, scoringPeriodId){
-  let url = 'http://games.espn.com/ffl/api/v2/scoreboard?leagueId=' + leagueId + '&scoringPeriodId=' + scoringPeriodId + '&seasonId=2017';
+  let url = 'http://games.espn.com/ffl/api/v2/scoreboard?leagueId=' + leagueId + '&scoringPeriodId=' + scoringPeriodId + '&seasonId=2018';
   return espnRequest.requestToPromise(url, cookies);
 }
 

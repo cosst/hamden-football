@@ -16,7 +16,7 @@ module.exports = {
 
   getPowerRankings: function (req, res) {
     var leagueId = '823037';
-    var seasonId = '2017';
+    var seasonId = '2018';
     var scoringPeriodId = req.headers.scoringperiodid;
     espnFF.getPowerRankings(leagueId, seasonId, scoringPeriodId)
     .then(rankings => res.send(rankings))
@@ -39,7 +39,7 @@ module.exports = {
   },
 
   getWeeklyScoreDataForSeason: function (req, res) {
-    espnFF.getWeeklyScoreDataForSeason('823037', '2017')
+    espnFF.getWeeklyScoreDataForSeason('823037', '2018')
     .then(seasonData => res.send(seasonData))
     .catch(e => console.log(e));
   }
